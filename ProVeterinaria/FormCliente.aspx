@@ -18,8 +18,8 @@
             <div class="col-md-2">
                 <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
-            <div class="col-md-2">
-                <asp:TextBox ID="txt_direccion" placeholder="Ingrese su Direccién" CssClass="form-control" runat="server"></asp:TextBox>
+            <div class="col-md-4">
+                <asp:TextBox ID="txt_direccion" placeholder="Ingrese su Dirección" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
             <div class="col-md-2">
                 <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click"/> 
