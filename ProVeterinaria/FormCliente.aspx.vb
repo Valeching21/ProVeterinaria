@@ -21,7 +21,6 @@
         txt_correo.Text = ""
         txt_direccion.Text = ""
 
-
     End Sub
 
     Protected Sub GridView1_RowDeleting(sender As Object, e As GridViewDeleteEventArgs)
