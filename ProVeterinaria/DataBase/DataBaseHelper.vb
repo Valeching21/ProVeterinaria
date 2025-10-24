@@ -24,7 +24,7 @@ Public Class DataBaseHelper
             End Using
 
         Catch ex As Exception
-
+            Return ex.Message
         End Try
         Return "Cliente registrado exitosamente."
     End Function

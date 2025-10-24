@@ -26,9 +26,9 @@
 
     Protected Sub GridView1_RowDeleting(sender As Object, e As GridViewDeleteEventArgs)
         Try
-            Dim CLIENTE_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Values)
-            dbHelper.delete(CLIENTE_ID)
             e.Cancel = True
+            Dim CLIENTE_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Value)
+            dbHelper.delete(CLIENTE_ID)
             GridView1.DataBind()
             lbl_mensaje.Text = "Cliente eliminado correctamente."
         Catch ex As Exception
