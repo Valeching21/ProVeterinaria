@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - Veterinaria</title>
+    <title><%: Page.Title %> Patitas Felices</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -49,7 +49,9 @@
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" href="~/FormCliente">Registro de Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/FormDoctores">Registro de Doctores</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Registro de Mascotas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Registro de Citas</a></li>
                     </ul>
                 </div>
             </div>

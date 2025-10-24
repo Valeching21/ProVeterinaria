@@ -36,7 +36,7 @@
     
     
     
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CLIENTE_ID" DataSourceID="SqlDataSource1" CssClass="table table-striped table-hover" OnRowDeleting="GridView1_RowDeleting">     
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="CLIENTE_ID" DataSourceID="SqlDataSource1" CssClass="table table-striped table-hover" OnRowDeleting="GridView1_RowDeleting"  OnSelectedIndexChanged="GridView1_SelectedIndexChanged">     
         <Columns>
             <asp:BoundField DataField="CLIENTE_ID" HeaderText="CLIENTE_ID" Visible="False" ReadOnly="True" SortExpression="CLIENTE_ID" />
             <asp:BoundField DataField="NOMBRE" HeaderText="NOMBRE" SortExpression="NOMBRE" />
