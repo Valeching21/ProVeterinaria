@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class FormMascota
 
     '''<summary>
-    '''Control GridView1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
     '''Control txt_nombre.
     '''</summary>
     '''<remarks>
@@ -32,13 +23,22 @@ Partial Public Class FormMascota
     Protected WithEvents txt_nombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_apellido.
+    '''Control txt_peso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_apellido As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_peso As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control txt_raza.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txt_raza As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txt_edad.
@@ -50,31 +50,13 @@ Partial Public Class FormMascota
     Protected WithEvents txt_edad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control btn_guardar.
+    '''Control ddl_especie.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents btn_guardar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control btn_actualizar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_actualizar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control btn_regresar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_regresar As Global.System.Web.UI.WebControls.Button
+    Protected WithEvents ddl_especie As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control lbl_mensaje.
@@ -84,6 +66,15 @@ Partial Public Class FormMascota
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Control GridView1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
     '''Control SqlDataSource1.
