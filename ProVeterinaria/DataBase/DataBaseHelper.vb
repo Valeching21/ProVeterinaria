@@ -50,9 +50,9 @@ Public Class DataBaseHelper
 
     Public Function update(ByRef CLIENTE As Cliente) As String
         Try
-            Dim sql As String = "UPDATE CLIENTE SET NOMBRE = @NOMRE, APELLIDO = @APELLIDO, TELEFONO = @TELEFONO, CORREO = @CORREO, DIRECCION = @DIRECCION  WHERE CLIENTE_ID = @CLIENTE_ID"
+            Dim sql As String = "UPDATE CLIENTE SET NOMBRE = @NOMBRE, APELLIDO = @APELLIDO, TELEFONO = @TELEFONO, CORREO = @CORREO, DIRECCION = @DIRECCION  WHERE CLIENTE_ID = @CLIENTE_ID"
             Dim parametros As New List(Of SqlParameter) From {
-                New SqlParameter("@Cliente_Id", CLIENTE.CLIENTE_ID1),
+                New SqlParameter("@CLIENTE_ID", CLIENTE.CLIENTE_ID1),
                 New SqlParameter("@NOMBRE", CLIENTE.NOMBRE1),
                 New SqlParameter("@APELLIDO", CLIENTE.APELLIDO1),
                 New SqlParameter("@TELEFONO", CLIENTE.TELEFONO1),
@@ -70,4 +70,6 @@ Public Class DataBaseHelper
         End Try
         Return "Persona Actualizada"
     End Function
+
+
 End Class
