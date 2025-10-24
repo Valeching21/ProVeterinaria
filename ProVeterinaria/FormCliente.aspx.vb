@@ -52,4 +52,25 @@
         e.Cancel = True
         GridView1.EditIndex = -1
     End Sub
+
+    Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
+
+        Dim row As GridViewRow = GridView1.SelectedRow
+        Dim CLIENTE_ID As Integer = Convert.ToInt32(row.Cells(1).Text)
+        Dim cliente As Cliente = New Cliente()
+
+        txt_nombre.Text = row.Cells(2).Text
+        txt_apellido.Text = row.Cells(3).Text
+        txt_telefono.Text = row.Cells(4).Text
+        txt_correo.Text = row.Cells(5).Text
+        txt_direccion.Text = row.Cells(6).Text
+
+
+    End Sub
+
+
+
+
+
+
 End Class
