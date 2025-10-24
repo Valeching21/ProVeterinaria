@@ -48,5 +48,26 @@ Public Class DataBaseHelper
         Return "Cliente eliminado exitosamente."
     End Function
 
-
+    Public Function update(ByRef CLIENTE As Cliente) As String
+        Try
+            Dim sql As String = "UPDATE CLIENTE SET NOMBRE = @NOMRE, APELLIDO = @APELLIDO, TELEFONO = @TELEFONO, CORREO = @CORREO, DIRECCION = @DIRECCION  WHERE CLIENTE_ID = @CLIENTE_ID"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@Cliente_Id", CLIENTE.CLIENTE_ID1),
+                New SqlParameter("@NOMBRE", CLIENTE.NOMBRE1),
+                New SqlParameter("@APELLIDO", CLIENTE.APELLIDO1),
+                New SqlParameter("@TELEFONO", CLIENTE.TELEFONO1),
+                New SqlParameter("@CORREO", CLIENTE.CORREO1),
+                New SqlParameter("@DIRECCION", CLIENTE.DIRECCION1)
+            }
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+        End Try
+        Return "Persona Actualizada"
+    End Function
 End Class

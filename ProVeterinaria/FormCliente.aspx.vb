@@ -37,4 +37,23 @@
     End Sub
 
 
+    Protected Sub GridView1_RowUpdating(sender As Object, e As GridViewUpdateEventArgs)
+        Dim CLIENTE_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Value)
+        Dim CLIENTE As Cliente = New Cliente With {
+            .CLIENTE_ID1 = CLIENTE_ID,
+            .NOMBRE1 = e.NewValues("NOMBRE"),
+            .APELLIDO1 = e.NewValues("APELLIDO"),
+            .TELEFONO1 = e.NewValues("TELEFONO"),
+            .CORREO1 = e.NewValues("CORREO"),
+            .DIRECCION1 = e.NewValues("DIRECCION")
+        }
+        dbHelper.update(CLIENTE)
+        GridView1.DataBind()
+        e.Cancel = True
+        GridView1.EditIndex = -1
+    End Sub
+End Class
+
+
+
 End Class
