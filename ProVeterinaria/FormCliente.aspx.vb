@@ -4,7 +4,9 @@
     Protected dbHelper As New DataBaseHelper()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-
+        btn_regresar.Visible = False
+        btn_guardar.Visible = True
+        btnActualizar.Visible = False
     End Sub
 
     Protected Sub btn_guardar_Click(sender As Object, e As EventArgs)
@@ -20,6 +22,10 @@
         txt_telefono.Text = ""
         txt_correo.Text = ""
         txt_direccion.Text = ""
+
+        btn_guardar.Visible = True
+        btnActualizar.Visible = False
+        btn_regresar.Visible = False
 
     End Sub
 
@@ -65,6 +71,10 @@
         txt_correo.Text = row.Cells(4).Text
         txt_direccion.Text = row.Cells(5).Text
         Editando.Value = CLIENTE_ID
+
+        btn_guardar.Visible = False
+        btnActualizar.Visible = True
+        btn_regresar.Visible = True
     End Sub
 
     Protected Sub btnActualizar_Click(sender As Object, e As EventArgs)
@@ -78,7 +88,25 @@
             .DIRECCION1 = txt_direccion.Text()
         }
         dbHelper.update(cliente)
+        txt_nombre.Text = ""
+        txt_apellido.Text = ""
+        txt_telefono.Text = ""
+        txt_correo.Text = ""
+        txt_direccion.Text = ""
         GridView1.DataBind()
         GridView1.EditIndex = -1
+    End Sub
+
+    Protected Sub btn_regresar_Click(sender As Object, e As EventArgs)
+        txt_nombre.Text = ""
+        txt_apellido.Text = ""
+        txt_telefono.Text = ""
+        txt_correo.Text = ""
+        txt_direccion.Text = ""
+
+        btn_guardar.Visible = True
+        btnActualizar.Visible = False
+        btn_regresar.Visible = False
+        lbl_mensaje.Text = "Edición Terminada."
     End Sub
 End Class

@@ -24,14 +24,17 @@
             </div>
             <div class="col-md-2">
                 <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click"/> 
-            &nbsp;&nbsp;
-                 <asp:Button ID="btnActualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
+           </div>
+            <div class="col-md-2 d-grid">
+               <asp:Button ID="btnActualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
+            </div>            
+                <div class="col-md-2 d-grid">
+                     <asp:Button ID="btn_regresar" CssClass="btn btn-danger" runat="server" Text="Regresar" OnClick="btn_regresar_Click"/>
+                </div>
             </div>
             <div>
             </div> 
 
-
-        </div>
         <div class="mt-2">
             <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
         </div>
