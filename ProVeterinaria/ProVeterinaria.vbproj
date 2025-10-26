@@ -146,6 +146,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="FormCliente.aspx" />
+    <Content Include="FormDoctor.aspx" />
     <Content Include="FormMascota.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -236,6 +237,13 @@
     </Compile>
     <Compile Include="FormCliente.aspx.vb">
       <DependentUpon>FormCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FormDoctor.aspx.designer.vb">
+      <DependentUpon>FormDoctor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoctor.aspx.vb">
+      <DependentUpon>FormDoctor.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FormMascota.aspx.designer.vb">

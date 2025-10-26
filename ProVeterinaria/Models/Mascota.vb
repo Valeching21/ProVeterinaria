@@ -5,6 +5,7 @@
     Private _ESPECIE As String
     Private _RAZA As String
     Private _EDAD As Integer
+    Private _PESO As Integer
 
     Public Property MASCOTA_ID1 As Integer
         Get
@@ -47,12 +48,22 @@
         End Set
     End Property
 
-    Public Sub New(mascota_ID As Integer, nombre As String, especie As String, raza As String, edad As Integer)
+    Public Property PESO As Integer
+        Get
+            Return _PESO
+        End Get
+        Set(value As Integer)
+            _PESO = value
+        End Set
+    End Property
+
+    Public Sub New(mascota_ID As Integer, nombre As String, especie As String, raza As String, edad As Integer, peso As Integer)
         Me.MASCOTA_ID1 = mascota_ID
         Me.NOMBRE1 = nombre
         Me.ESPECIE1 = especie
         Me.RAZA1 = raza
         Me.EDAD1 = edad
+        Me.PESO = peso
     End Sub
 
     Public Sub New()

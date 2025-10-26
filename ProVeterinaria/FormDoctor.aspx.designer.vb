@@ -11,16 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class FormMascota
-
-    '''<summary>
-    '''Control Editando.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents Editando As Global.System.Web.UI.WebControls.HiddenField
+Partial Public Class FormDoctor
 
     '''<summary>
     '''Control txt_nombre.
@@ -32,40 +23,40 @@ Partial Public Class FormMascota
     Protected WithEvents txt_nombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_peso.
+    '''Control txt_apellido.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_peso As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_apellido As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_raza.
+    '''Control txt_telefono.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_raza As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_telefono As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_edad.
+    '''Control txt_correo.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_edad As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_correo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control ddl_especie.
+    '''Control ddl_especialidad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents ddl_especie As Global.System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddl_especialidad As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''Control btn_guardar.
@@ -75,24 +66,6 @@ Partial Public Class FormMascota
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents btn_guardar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control btn_Actualizar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_Actualizar As Global.System.Web.UI.WebControls.Button
-
-    '''<summary>
-    '''Control btn_regresar.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents btn_regresar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''Control lbl_mensaje.
