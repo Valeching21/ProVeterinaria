@@ -31,7 +31,7 @@
                 </div>
              <br />
                      <div class="col-md-2">
-                         <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click"/> 
+                         <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click" ValidationGroup="vgMascota"/> 
                         </div>
                       <div class="col-md-2 d-grid">
                         <asp:Button ID="btn_Actualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick="btnActualizar_Click" />
@@ -44,6 +44,9 @@
                  <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
              </div>
       </div>
+             <asp:ValidationSummary ID="vsMascota" runat="server" ShowSummary="true" ValidationGroup="vgMascota" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
+             <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="Dynamic" ErrorMessage="Se requiere el Nombre de la Mascota"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_peso" CssClass="alert alert-warning" Display="Dynamic" ErrorMessage="Se requiere el Peso de la Mascota"></asp:RequiredFieldValidator>
    </div>
          </div>
    
