@@ -44,8 +44,8 @@
         Dim Doctor As Doctor = New Doctor()
         txt_nombre.Text = row.Cells(1).Text
         txt_apellido.Text = row.Cells(2).Text
-        ddl_especialidad.SelectedValue = row.Cells(4).Text
-        txt_telefono.Text = row.Cells(3).Text
+        ddl_especialidad.SelectedValue = row.Cells(3).Text
+        txt_telefono.Text = row.Cells(4).Text
         txt_correo.Text = row.Cells(5).Text
 
         Editando.Value = DOCTOR_ID

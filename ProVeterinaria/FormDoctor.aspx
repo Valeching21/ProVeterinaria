@@ -20,6 +20,7 @@
                     </div>
                    <div class="col-md-4">
                          <asp:DropDownList ID="ddl_especialidad" placeholder="Especialidad" CssClass="form-select" runat="server">
+                             <asp:ListItem Text="Seleccione la especie" Value="" />
                              <asp:ListItem Text="Animales de Compañia" Value="compañia" />
                              <asp:ListItem Text="Animales exóticos" Value="exotico" />
                              <asp:ListItem Text="Animales de granja" Value="granja" />
