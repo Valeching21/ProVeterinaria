@@ -45,6 +45,7 @@
              </div>
       </div>
    </div>
+         </div>
    
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="MASCOTA_ID" DataSourceID="SqlDataSource1"  CssClass="table table-striped table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting" 
         OnRowCancelingEdit="GridView1_RowCancelingEdit">

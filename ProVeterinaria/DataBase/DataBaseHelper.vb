@@ -137,16 +137,75 @@ Public Class DataBaseHelper
         End Try
         Return "Mascota Actualizada"
 
-
-
-
     End Function
 
+    Public Function creacion(Doctor As Doctor) As String
+        Try
+            Dim sql As String = "INSERT INTO DOCTOR (DOCTOR_ID, NOMBRE, APELLIDO, ESPECIALIDAD, TELEFONO, CORREO) VALUES (@DOCTOR_ID, @NOMBRE, @APELLIDO, @ESPECIALIDAD, @TELEFONO, @CORREO)"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@DOCTOR_ID", Doctor.DOCTOR_ID1),
+                New SqlParameter("@NOMBRE", Doctor.NOMBRE1),
+                New SqlParameter("@APELLIDO", Doctor.APELLIDO1),
+                New SqlParameter("@ESPECIALIDAD", Doctor.ESPECIALIDAD1),
+                New SqlParameter("@TELEFONO", Doctor.TELEFONO1),
+                New SqlParameter("@CORREO", Doctor.CORREO1)
+            }
 
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
 
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+        Return "Doctor registrado exitosamente."
+    End Function
 
+    Public Function Borrar(DOCTOR_ID As Integer) As String
+        Try
+            Dim sql As String = "DELETE FROM DOCTOR WHERE DOCTOR_ID = @DOCTOR_ID"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@DOCTOR_ID", DOCTOR_ID)
+            }
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
 
+        End Try
+        Return "Doctor eliminado exitosamente."
+    End Function
 
+    Public Function refrescar(ByRef Doctor As Doctor) As String
+        Try
+            Dim sql As String = "UPDATE DOCTOR SET NOMBRE = @NOMBRE, APELLIDO = @APELLIDO, ESPECIALIDAD = @ESPECIALIDAD, TELEFONO = @TELEFONO, CORREO = @CORREO WHERE DOCTOR_ID = @DOCTOR_ID"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@DOCTOR_ID", Doctor.DOCTOR_ID1),
+                New SqlParameter("@NOMBRE", Doctor.NOMBRE1),
+                New SqlParameter("@APELLIDO", Doctor.APELLIDO1),
+                New SqlParameter("@ESPECIALIDAD", Doctor.ESPECIALIDAD1),
+                New SqlParameter("@TELEFONO", Doctor.TELEFONO1),
+                New SqlParameter("@CORREO", Doctor.CORREO1)
+            }
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+        End Try
+        Return "Doctor Actualizado"
+    End Function
 
 End Class
 

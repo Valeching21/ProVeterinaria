@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="FormDoctor.aspx.vb" Inherits="ProVeterinaria.FormDoctor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    
+     <asp:HiddenField ID="Editando" runat="server" />
        <div class="container mt-4">
     <h2 class="mb-4">Registro de Doctores</h2>
 
@@ -19,8 +19,7 @@
                         <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
                    <div class="col-md-4">
-                         <asp:DropDownList ID="ddl_especialidad" CssClass="form-select" runat="server">
-                             <asp:ListItem Text="Especialidad" />
+                         <asp:DropDownList ID="ddl_especialidad" placeholder="Especialidad" CssClass="form-select" runat="server">
                              <asp:ListItem Text="Animales de Compañia" Value="compa" />
                              <asp:ListItem Text="Animales exóticos" Value="exotico" />
                              <asp:ListItem Text="Animales de granja" Value="granja" />
@@ -33,17 +32,26 @@
                     <div class="col-md-2">
                         <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click"/> 
                    </div>
-           </div>
+                     <div class="col-md-2 d-grid">
+                          <asp:Button ID="btn_Actualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick ="btn_Actualizar_Click" />
+                         </div>
+                        <div class="col-md-2 d-grid">
+                            <asp:Button ID="btn_regresar" CssClass="btn btn-danger" runat="server" Text="Regresar" OnClick="btn_regresar_Click"/>
+                            </div>
+
 
         <div class="mt-2">
             <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
         </div>
      </div>
 </div>
+
+           </div>
     
     
     
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DOCTOR_ID" DataSourceID="SqlDataSource1">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DOCTOR_ID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged ="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting"
+        OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating ="GridView1_RowUpdating">
         <Columns>
             <asp:BoundField DataField="DOCTOR_ID" HeaderText="DOCTOR_ID" ReadOnly="True" SortExpression="DOCTOR_ID" />
             <asp:BoundField DataField="NOMBRE" HeaderText="NOMBRE" SortExpression="NOMBRE" />
