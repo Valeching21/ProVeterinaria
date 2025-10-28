@@ -83,6 +83,7 @@
         txt_nombre.Text = ""
         txt_apellido.Text = ""
         ddl_especialidad.SelectedValue = ""
+        txt_correo.Text = ""
         txt_telefono.Text = ""
 
 
