@@ -11,13 +11,13 @@
                      <asp:TextBox ID="txt_nombre" placeholder="Nombre" CssClass="form-control" runat="server"></asp:TextBox>
                  </div>
                  <div class="col-md-2">
-                     <asp:TextBox ID="txt_peso" placeholder="Peso" CssClass="form-control" runat="server"></asp:TextBox>
+                     <asp:TextBox ID="txt_peso" placeholder="Peso" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                  </div>
                  <div class="col-md-2">
                      <asp:TextBox ID="txt_raza" placeholder="Raza" CssClass="form-control" runat="server"></asp:TextBox>
                  </div>
                  <div class="col-md-2">
-                    <asp:TextBox ID="txt_edad" placeholder="Edad" CssClass="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txt_edad" placeholder="Edad" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                 </div>
                <div class="col-md-4">
                     <asp:DropDownList ID="ddl_especie" CssClass="form-select" runat="server">
@@ -44,9 +44,12 @@
                  <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
              </div>
       </div>
-             <asp:ValidationSummary ID="vsMascota" runat="server" ShowSummary="true" ValidationGroup="vgMascota" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
-             <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="Dynamic" ErrorMessage="Se requiere el Nombre de la Mascota"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_peso" CssClass="alert alert-warning" Display="Dynamic" ErrorMessage="Se requiere el Peso de la Mascota"></asp:RequiredFieldValidator>
+             <asp:ValidationSummary ID="vsMascota" runat="server" ShowSummary="True" ValidationGroup="vgMascota" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
+             <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Nombre de la Mascota"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfPeso" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_peso" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Peso de la Mascota"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfRaza" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_raza" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere la Raza de la Mascota"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfEdad" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_edad" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Edad de la Mascota"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="vgMascota" ControlToValidate="ddl_especie" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Tipo de la Mascota"></asp:RequiredFieldValidator>
    </div>
          </div>
    
@@ -66,4 +69,5 @@
 
      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString %>" SelectCommand="SELECT * FROM [MASCOTA]"></asp:SqlDataSource>
 
+    </div>
 </asp:Content>
