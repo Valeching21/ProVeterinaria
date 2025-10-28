@@ -158,6 +158,24 @@ Partial Public Class FormMascota
     Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
+    '''Control rvEdad.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rvEdad As Global.System.Web.UI.WebControls.RangeValidator
+
+    '''<summary>
+    '''Control rvPeso.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents rvPeso As Global.System.Web.UI.WebControls.RangeValidator
+
+    '''<summary>
     '''Control GridView1.
     '''</summary>
     '''<remarks>

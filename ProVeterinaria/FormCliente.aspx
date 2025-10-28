@@ -17,7 +17,7 @@
                 <asp:TextBox ID="txt_telefono" placeholder="Ingrese su Teléfono" CssClass="form-control" runat="server"></asp:TextBox>
             </div>
             <div class="col-md-2">
-                <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server" TextMode="Email"></asp:TextBox>
             </div>
             <div class="col-md-4">
                 <asp:TextBox ID="txt_direccion" placeholder="Ingrese su Dirección" CssClass="form-control" runat="server"></asp:TextBox>
@@ -53,6 +53,6 @@
             <asp:CommandField ShowSelectButton ="True" ControlStyle-CssClass="btn btn-primary" />
             <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
         </Columns>
-</asp:GridView>
+</asp:GridView> 
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString %>" ProviderName="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString.ProviderName %>" SelectCommand="SELECT * FROM [CLIENTE]"></asp:SqlDataSource>
 </asp:Content>
