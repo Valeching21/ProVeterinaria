@@ -42,11 +42,11 @@
         Dim row As GridViewRow = GridView1.SelectedRow
         Dim DOCTOR_ID As Integer = Convert.ToInt32(GridView1.DataKeys(row.RowIndex).Value)
         Dim Doctor As Doctor = New Doctor()
-        txt_nombre.Text = row.Cells(2).Text
-        txt_apellido.Text = row.Cells(3).Text
+        txt_nombre.Text = row.Cells(1).Text
+        txt_apellido.Text = row.Cells(2).Text
         ddl_especialidad.SelectedValue = row.Cells(4).Text
-        txt_telefono.Text = row.Cells(5).Text
-        txt_correo.Text = row.Cells(6).Text
+        txt_telefono.Text = row.Cells(3).Text
+        txt_correo.Text = row.Cells(5).Text
 
         Editando.Value = DOCTOR_ID
 

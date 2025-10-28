@@ -50,7 +50,8 @@
     
     
     
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DOCTOR_ID" DataSourceID="SqlDataSource1" OnSelectedIndexChanged ="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting"
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DOCTOR_ID" DataSourceID="SqlDataSource1" CssClass="table table-striped table-hover" 
+        OnSelectedIndexChanged ="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting"
         OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating ="GridView1_RowUpdating">
         <Columns>
             <asp:BoundField DataField="DOCTOR_ID" HeaderText="DOCTOR_ID" ReadOnly="True" SortExpression="DOCTOR_ID" />
