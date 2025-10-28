@@ -13,10 +13,10 @@
                         <asp:TextBox ID="txt_apellido" placeholder="Ingrese su Apellido" CssClass="form-control" runat="server"></asp:TextBox>
                     </div>
                     <div class="col-md-2">
-                        <asp:TextBox ID="txt_telefono" placeholder="Ingrese su Teléfono" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_telefono" placeholder="Ingrese su Teléfono" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                     </div>
                     <div class="col-md-2">
-                        <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server" TextMode="Phone"></asp:TextBox>
                     </div>
                    <div class="col-md-4">
                          <asp:DropDownList ID="ddl_especialidad" placeholder="Especialidad" CssClass="form-select" runat="server">
@@ -31,10 +31,10 @@
                          </asp:DropDownList>
                      </div>
                     <div class="col-md-2">
-                        <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click"/> 
+                        <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click" ValidationGroup="vgDoctor"/> 
                    </div>
                      <div class="col-md-2 d-grid">
-                          <asp:Button ID="btn_Actualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick ="btn_Actualizar_Click" />
+                          <asp:Button ID="btn_Actualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick ="btn_Actualizar_Click" ValidationGroup="vgDoctor" />
                          </div>
                         <div class="col-md-2 d-grid">
                             <asp:Button ID="btn_regresar" CssClass="btn btn-danger" runat="server" Text="Regresar" OnClick="btn_regresar_Click"/>
@@ -46,6 +46,14 @@
         </div>
      </div>
 </div>
+             <asp:ValidationSummary ID="vsDoctor" runat="server" ShowSummary="True" ValidationGroup="vgDoctor" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
+             <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Nombre del Doctor"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfApellido" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_apellido" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Apellido del Doctor"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfTelefono" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_telefono" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el número de teléfono del Doctor"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfCorreo" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_correo" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Correo"></asp:RequiredFieldValidator>
+             <asp:RequiredFieldValidator ID="rfEspecialidad" runat="server" ValidationGroup="vgDoctor" ControlToValidate="ddl_especialidad" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere la espacialidad del Doctor"></asp:RequiredFieldValidator>
+             <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txt_telefono" ValidationGroup="vgDoctor" ValidationExpression="^\d{8}$" ErrorMessage="El número de teléfono debe tener 8 dígitos" Display="None" ForeColor="Red" />
+
 
            </div>
     
