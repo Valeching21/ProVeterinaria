@@ -141,9 +141,8 @@ Public Class DataBaseHelper
 
     Public Function creacion(Doctor As Doctor) As String
         Try
-            Dim sql As String = "INSERT INTO DOCTOR (DOCTOR_ID, NOMBRE, APELLIDO, ESPECIALIDAD, TELEFONO, CORREO) VALUES (@DOCTOR_ID, @NOMBRE, @APELLIDO, @ESPECIALIDAD, @TELEFONO, @CORREO)"
+            Dim sql As String = "INSERT INTO DOCTOR (NOMBRE, APELLIDO, ESPECIALIDAD, TELEFONO, CORREO) VALUES ( @NOMBRE, @APELLIDO, @ESPECIALIDAD, @TELEFONO, @CORREO)"
             Dim parametros As New List(Of SqlParameter) From {
-                New SqlParameter("@DOCTOR_ID", Doctor.DOCTOR_ID1),
                 New SqlParameter("@NOMBRE", Doctor.NOMBRE1),
                 New SqlParameter("@APELLIDO", Doctor.APELLIDO1),
                 New SqlParameter("@ESPECIALIDAD", Doctor.ESPECIALIDAD1),

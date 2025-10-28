@@ -20,7 +20,7 @@
                     </div>
                    <div class="col-md-4">
                          <asp:DropDownList ID="ddl_especialidad" placeholder="Especialidad" CssClass="form-select" runat="server">
-                             <asp:ListItem Text="Animales de Compañia" Value="compa" />
+                             <asp:ListItem Text="Animales de Compañia" Value="compañia" />
                              <asp:ListItem Text="Animales exóticos" Value="exotico" />
                              <asp:ListItem Text="Animales de granja" Value="granja" />
                              <asp:ListItem Text="Equinos" Value="equinos" />
@@ -59,6 +59,8 @@
             <asp:BoundField DataField="ESPECIALIDAD" HeaderText="ESPECIALIDAD" SortExpression="ESPECIALIDAD" />
             <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" InsertVisible="False" ReadOnly="True" SortExpression="TELEFONO" />
             <asp:BoundField DataField="CORREO" HeaderText="CORREO" SortExpression="CORREO" />
+            <asp:CommandField ShowSelectButton ="True" ControlStyle-CssClass="btn btn-primary" />
+            <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
         </Columns>
     </asp:GridView>
 
