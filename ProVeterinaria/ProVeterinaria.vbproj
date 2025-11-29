@@ -224,6 +224,10 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="DataBase\dbCliente.vb" />
+    <Compile Include="DataBase\dbDoctor.vb" />
+    <Compile Include="DataBase\dbLogin.vb" />
+    <Compile Include="DataBase\dbMascota.vb" />
     <Compile Include="Utils\DataBaseHelper.vb" />
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
@@ -336,7 +340,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataBase\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
