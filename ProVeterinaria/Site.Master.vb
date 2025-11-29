@@ -1,6 +1,25 @@
 ﻿Public Class SiteMaster
     Inherits MasterPage
-    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+    Protected Autenticado As Boolean = False
 
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        Dim Usuario As Usuario = Session("Usuario")
+        Autenticado = Usuario IsNot Nothing
+
+        If Autenticado Then
+            Dim esAdmin As Boolean = Usuario.Rol = "2"
+            liAdmin.Visible = esAdmin
+            liCliente.Visible = esAdmin
+            liDoctores.Visible = esAdmin
+            liMascotas.Visible = esAdmin
+            liCitas.Visible = True
+            liInicio.Visible = True
+        End If
+    End Sub
+
+    Protected Sub LogOut_Click(sender As Object, e As EventArgs)
+        Session.Clear()
+        Session.Abandon()
+        Response.Redirect("Login.aspx")
     End Sub
 End Class

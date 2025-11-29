@@ -4,7 +4,7 @@
 
 <html lang="es">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> Patitas Felices</title>
@@ -13,7 +13,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -49,11 +49,21 @@
                 </button>
                 <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/FormCliente">Registro de Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/FormDoctor">Registro de Doctores</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/FormMascota">Registro de Mascotas</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Registro de Citas</a></li>
+                        <% If (Autenticado = False) Then %>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Login.aspx">Log In</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Registro.aspx">Registro</a></li>
+                        <% End If %>
+                        <% If (Autenticado) Then %>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="liInicio" href="~/Home">Inicio</a></li>
+                        <li class="nav-item" runat="server" id="liAdmin"><a class="nav-link" runat="server" href="~/Admin">Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="liCliente" href="~/FormCliente">Registro de Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="liDoctores" href="~/FormDoctor">Registro de Doctores</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="liMascotas" href="~/FormMascota">Registro de Mascotas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="liCitas" href="~/Contact">Registro de Citas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server">
+                            <asp:Button ID="LogOut" OnClick="LogOut_Click" runat="server" Text="Cerrar Sesión" CssClass="btn btn-danger btn-sm" />
+                        </a></li>
+                        <% End If %>
                     </ul>
                 </div>
             </div>
