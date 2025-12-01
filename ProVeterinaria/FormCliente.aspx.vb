@@ -1,7 +1,7 @@
 ﻿Public Class FormCliente
     Inherits System.Web.UI.Page
     Public Cliente As New Cliente()
-    Protected dbHelper As New DataBaseHelper()
+    Protected dbHelper As New dbCliente()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         btn_regresar.Visible = False

@@ -1,7 +1,7 @@
 ﻿Public Class FormMascota
     Inherits System.Web.UI.Page
     Public Mascota As New Mascota()
-    Protected dbHelper As New DataBaseHelper()
+    Protected dbHelper As New dbMascota()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         btn_regresar.Visible = False

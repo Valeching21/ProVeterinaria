@@ -235,7 +235,6 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="DataBase\dbCliente.vb" />
     <Compile Include="DataBase\dbDoctor.vb" />
     <Compile Include="DataBase\dbLogin.vb" />
     <Compile Include="DataBase\dbMascota.vb" />
@@ -261,7 +260,7 @@
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="DataBase\DataBaseHelper.vb" />
+    <Compile Include="DataBase\dbCliente.vb" />
     <Compile Include="Default.aspx.vb">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>Default.aspx</DependentUpon>

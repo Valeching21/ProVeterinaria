@@ -1,7 +1,7 @@
 ﻿Public Class FormDoctor
     Inherits System.Web.UI.Page
     Public Doctor As New Doctor()
-    Protected dbHelper As New DataBaseHelper()
+    Protected dbHelper As New dbDoctor()
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         btn_regresar.Visible = False
         btn_guardar.Visible = True

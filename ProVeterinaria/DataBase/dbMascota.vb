@@ -1,3 +1,73 @@
-﻿Public Class dbMascota
+﻿Imports System.Data.SqlClient
 
+Public Class dbMascota
+    Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("ProyectoVeterinariaConnectionString").ConnectionString
+
+    Public Function crear(Mascota As Mascota) As String
+        Try
+            Dim sql As String = "INSERT INTO MASCOTA (NOMBRE_MASCOTA, ESPECIE_MASCOTA, RAZA, EDAD, PESO) VALUES (@NOMBRE_MASCOTA, @ESPECIE_MASCOTA, @RAZA, @EDAD, @PESO)"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@NOMBRE_MASCOTA", Mascota.NOMBRE1),
+                New SqlParameter("@ESPECIE_MASCOTA", Mascota.ESPECIE1),
+                New SqlParameter("@RAZA", Mascota.RAZA1),
+                New SqlParameter("@EDAD", Mascota.EDAD1),
+                New SqlParameter("@PESO", Mascota.PESO)
+            }
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+            Return ex.Message
+        End Try
+        Return "Mascota registrada exitosamente."
+    End Function
+
+
+    Public Function eliminar(MASCOTA_ID As Integer) As String
+        Try
+            Dim sql As String = "DELETE FROM MASCOTA WHERE MASCOTA_ID = @MASCOTA_ID"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@MASCOTA_ID", MASCOTA_ID)
+            }
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+
+        End Try
+        Return "Mascota eliminada exitosamente."
+    End Function
+
+    Public Function actualizar(ByRef MASCOTA As Mascota) As String
+
+        Try
+            Dim sql As String = "UPDATE MASCOTA SET NOMBRE_MASCOTA = @NOMBRE_MASCOTA, ESPECIE_MASCOTA = @ESPECIE_MASCOTA, RAZA= @RAZA, EDAD = @EDAD, PESO = @PESO  WHERE MASCOTA_ID = @MASCOTA_ID"
+            Dim parametros As New List(Of SqlParameter) From {
+                New SqlParameter("@MASCOTA_ID", MASCOTA.MASCOTA_ID1),
+                New SqlParameter("@NOMBRE_MASCOTA", MASCOTA.NOMBRE1),
+                New SqlParameter("@ESPECIE_MASCOTA", MASCOTA.ESPECIE1),
+                New SqlParameter("@EDAD", MASCOTA.EDAD1),
+                New SqlParameter("@RAZA", MASCOTA.RAZA1),
+                New SqlParameter("@PESO", MASCOTA.PESO)
+            }
+            Using connection As New SqlConnection(connectionString)
+                Using command As New SqlCommand(sql, connection)
+                    command.Parameters.AddRange(parametros.ToArray())
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                End Using
+            End Using
+        Catch ex As Exception
+        End Try
+        Return "Mascota Actualizada"
+
+    End Function
 End Class
