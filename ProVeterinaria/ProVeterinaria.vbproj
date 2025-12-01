@@ -273,7 +273,7 @@
     </Compile>
     <Compile Include="FormCliente.aspx.vb">
       <DependentUpon>FormCliente.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="FormDoctor.aspx.designer.vb">
       <DependentUpon>FormDoctor.aspx</DependentUpon>
