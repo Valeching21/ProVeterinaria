@@ -4,28 +4,30 @@
     Public Property Contrasena As String
     Public Property Email As String
     Public Property Rol As String
-
     Public Property Activo As Boolean
+    Public Property Cliente_ID As Integer
+
+    Public Sub New()
+    End Sub
 
     Public Sub New(nombreUsuario As String, contrasena As String)
         Me.NombreUsuario = nombreUsuario
         Me.Contrasena = contrasena
     End Sub
 
-    Public Sub New(idUsuario As Integer, nombreUsuario As String, contrasena As String, email As String, rol As String, activo As Boolean)
+    Public Sub New(idUsuario As Integer, nombreUsuario As String, contrasena As String, email As String, rol As String, activo As Boolean, clienteId As Integer)
         Me.IdUsuario = idUsuario
         Me.NombreUsuario = nombreUsuario
         Me.Contrasena = contrasena
         Me.Email = email
         Me.Rol = rol
         Me.Activo = activo
+        Me.Cliente_ID = clienteId
     End Sub
 
-    Public Sub New(nombreUsuario As String, contrasena As String, email As String)
+    Public Sub New(nombreUsuario As String, contrasena As String, email As String, clienteId As Integer)
         Me.New(nombreUsuario, contrasena)
         Me.Email = email
-    End Sub
-
-    Public Sub New()
+        Me.Cliente_ID = clienteId
     End Sub
 End Class

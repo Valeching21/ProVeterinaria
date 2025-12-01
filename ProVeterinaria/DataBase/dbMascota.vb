@@ -20,12 +20,11 @@ Public Class dbMascota
                     command.ExecuteNonQuery()
                 End Using
             End Using
+            Return "Mascota registrada exitosamente."
         Catch ex As Exception
-            Return ex.Message
+            Return "Error al registrar la mascota: " & ex.Message
         End Try
-        Return "Mascota registrada exitosamente."
     End Function
-
 
     Public Function eliminar(MASCOTA_ID As Integer) As String
         Try
@@ -65,9 +64,9 @@ Public Class dbMascota
                     command.ExecuteNonQuery()
                 End Using
             End Using
+            Return "Mascota actualizada correctamente."
         Catch ex As Exception
+            Return "Error al actualizar la mascota: " & ex.Message
         End Try
-        Return "Mascota Actualizada"
-
     End Function
 End Class

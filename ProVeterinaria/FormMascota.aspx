@@ -2,24 +2,24 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
     <asp:HiddenField ID="Editando" runat="server" />
-     <div class="container mt-4">
-     <h2 class="mb-4">Registro de Mascotas</h2>
+    <div class="container mt-4">
+        <h2 class="mb-4">Registro de Mascotas</h2>
 
-         <div class="card p-4 mb-4 shadow-sm">
-             <div class="row g-3">
-                 <div class="col-md-2">
-                     <asp:TextBox ID="txt_nombre" placeholder="Nombre" CssClass="form-control" runat="server"></asp:TextBox>
-                 </div>
-                 <div class="col-md-2">
-                     <asp:TextBox ID="txt_peso" placeholder="Peso" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
-                 </div>
-                 <div class="col-md-2">
-                     <asp:TextBox ID="txt_raza" placeholder="Raza" CssClass="form-control" runat="server"></asp:TextBox>
-                 </div>
-                 <div class="col-md-2">
+        <div class="card p-4 mb-4 shadow-sm">
+            <div class="row g-3">
+                <div class="col-md-2">
+                    <asp:TextBox ID="txt_nombre" placeholder="Nombre" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-md-2">
+                    <asp:TextBox ID="txt_peso" placeholder="Peso" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
+                </div>
+                <div class="col-md-2">
+                    <asp:TextBox ID="txt_raza" placeholder="Raza" CssClass="form-control" runat="server"></asp:TextBox>
+                </div>
+                <div class="col-md-2">
                     <asp:TextBox ID="txt_edad" placeholder="Edad" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
                 </div>
-               <div class="col-md-4">
+                <div class="col-md-4">
                     <asp:DropDownList ID="ddl_especie" CssClass="form-select" runat="server">
                         <asp:ListItem Text="Seleccione la especie" Value="" />
                         <asp:ListItem Text="Perro" Value="Perro" />
@@ -29,32 +29,34 @@
                         <asp:ListItem Text="Otro" Value="Otro" />
                     </asp:DropDownList>
                 </div>
-             <br />
-                     <div class="col-md-2">
-                         <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click" ValidationGroup="vgMascota"/> 
-                        </div>
-                      <div class="col-md-2 d-grid">
-                        <asp:Button ID="btn_Actualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick="btnActualizar_Click" ValidationGroup="vgMascota"/>
-                     </div>
-                    <div class="col-md-2 d-grid">
-                        <asp:Button ID="btn_regresar" CssClass="btn btn-danger" runat="server" Text="Regresar" OnClick="btn_regresar_Click"/>
-                    </div>
+                <br />
+                <div class="col-md-2">
+                    <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click" ValidationGroup="vgMascota"/>  
+                </div>
+                <div class="col-md-2 d-grid">
+                   
+                    <asp:Button ID="btn_Actualizar" CssClass="btn btn-primary" runat="server" Text="Actualizar" OnClick="btnActualizar_Click" ValidationGroup="vgMascota"/>  
+                </div>
+                <div class="col-md-2 d-grid">
+                    <asp:Button ID="btn_regresar" CssClass="btn btn-danger" runat="server" Text="Regresar" OnClick="btn_regresar_Click"/>  
+                </div>
 
-             <div class="mt-2">
-                 <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
-             </div>
-      </div>
-             <asp:ValidationSummary ID="vsMascota" runat="server" ShowSummary="True" ValidationGroup="vgMascota" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
-             <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Nombre de la Mascota"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfPeso" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_peso" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Peso de la Mascota"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfRaza" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_raza" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere la Raza de la Mascota"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfEdad" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_edad" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Edad de la Mascota"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="vgMascota" ControlToValidate="ddl_especie" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Tipo de la Mascota"></asp:RequiredFieldValidator>
-             <asp:RangeValidator ID="rvEdad" runat="server" ControlToValidate="txt_edad" ValidationGroup="vgMascota" ErrorMessage="La Edad debe estar entre 1 y 25" MinimumValue="1" MaximumValue="25" Type="Integer" Display="None" />
+                <div class="mt-2">
+                    <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
+                </div>
+            </div>
+
+            <asp:ValidationSummary ID="vsMascota" runat="server" ShowSummary="True" ValidationGroup="vgMascota" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
+            <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Nombre de la Mascota"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfPeso" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_peso" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Peso de la Mascota"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfRaza" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_raza" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere la Raza de la Mascota"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="rfEdad" runat="server" ValidationGroup="vgMascota" ControlToValidate="txt_edad" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere la Edad de la Mascota"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ValidationGroup="vgMascota" ControlToValidate="ddl_especie" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Tipo de la Mascota"></asp:RequiredFieldValidator>
+            <asp:RangeValidator ID="rvEdad" runat="server" ControlToValidate="txt_edad" ValidationGroup="vgMascota" ErrorMessage="La Edad debe estar entre 1 y 25" MinimumValue="1" MaximumValue="25" Type="Integer" Display="None" />
              <asp:RangeValidator ID="rvPeso" runat="server" ControlToValidate="txt_peso" ValidationGroup="vgMascota" ValidationExpression="^\d+$" ErrorMessage="El Peso es Max 2 digitos, Min 1 digito" MinimumValue="1" MaximumValue="25" Type="Integer" Display="None" />            
-             </div>
-         </div>
-   
+        </div>
+    </div>
+
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="MASCOTA_ID" DataSourceID="SqlDataSource1"  CssClass="table table-striped table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting" 
         OnRowCancelingEdit="GridView1_RowCancelingEdit">
         <Columns>
@@ -64,12 +66,12 @@
             <asp:BoundField DataField="ESPECIE_MASCOTA" HeaderText="ESPECIE" SortExpression="ESPECIE" />
             <asp:BoundField DataField="RAZA" HeaderText="RAZA" SortExpression="RAZA" />
             <asp:BoundField DataField="PESO" HeaderText="PESO (KG)" SortExpression="PESO" />
-            <asp:CommandField ShowSelectButton ="True" ControlStyle-CssClass="btn btn-primary" />
-            <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger"/>
+            <asp:CommandField ShowSelectButton="True" ControlStyle-CssClass="btn btn-primary" />
+            <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
         </Columns>
-     </asp:GridView>
+    </asp:GridView>
 
-     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString %>" SelectCommand="SELECT * FROM [MASCOTA]"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString %>" SelectCommand="SELECT * FROM [MASCOTA]"></asp:SqlDataSource>
 
     </div>
     </div>

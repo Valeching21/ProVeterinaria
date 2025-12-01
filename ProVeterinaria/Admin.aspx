@@ -19,6 +19,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <a href="Admin.aspx">Admin.aspx</a>
     <script type="text/javascript">
         window.onload = function () {
             Swal.fire({

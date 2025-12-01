@@ -44,6 +44,7 @@
             e.Cancel = True
             Dim DOCTOR_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Value)
             dbHelper.Borrar(DOCTOR_ID)
+
             GridView1.DataBind()
 
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaEliminar",
@@ -51,7 +52,7 @@
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaErrorEliminar",
-                "Swal.fire('Error','No se pudo eliminar el doctor: " & ex.Message.Replace("'", "") & "','error');", True)
+            "Swal.fire('Error','No se pudo eliminar el doctor: " & ex.Message.Replace("'", "") & "','error');", True)
         End Try
     End Sub
 

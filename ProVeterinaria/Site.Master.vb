@@ -1,5 +1,6 @@
 ﻿Public Class SiteMaster
     Inherits MasterPage
+
     Protected Autenticado As Boolean = False
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
@@ -12,7 +13,9 @@
             liCliente.Visible = esAdmin
             liDoctores.Visible = esAdmin
             liMascotas.Visible = esAdmin
+
             liCitas.Visible = True
+
             liInicio.Visible = True
         End If
     End Sub

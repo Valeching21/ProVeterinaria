@@ -52,7 +52,7 @@
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaErrorEliminar",
-                "Swal.fire('Error','No se pudo eliminar la mascota: " & ex.Message.Replace("'", "") & "','error');", True)
+            "Swal.fire('Error','No se pudo eliminar la mascota: " & ex.Message.Replace("'", "") & "','error');", True)
         End Try
     End Sub
 

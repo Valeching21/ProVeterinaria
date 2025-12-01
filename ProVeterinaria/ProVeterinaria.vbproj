@@ -144,8 +144,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FormCitas.aspx" />
     <Content Include="FormCliente.aspx" />
     <Content Include="FormDoctor.aspx" />
     <Content Include="FormMascota.aspx" />
@@ -235,9 +235,17 @@
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="DataBase\dbCita.vb" />
     <Compile Include="DataBase\dbDoctor.vb" />
     <Compile Include="DataBase\dbLogin.vb" />
     <Compile Include="DataBase\dbMascota.vb" />
+    <Compile Include="FormCitas.aspx.designer.vb">
+      <DependentUpon>FormCitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormCitas.aspx.vb">
+      <DependentUpon>FormCitas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Home.aspx.designer.vb">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
@@ -250,7 +258,7 @@
     </Compile>
     <Compile Include="Login.aspx.vb">
       <DependentUpon>Login.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Models\Usuario.vb" />
     <Compile Include="Registro.aspx.designer.vb">
@@ -261,13 +269,6 @@
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="DataBase\dbCliente.vb" />
-    <Compile Include="Default.aspx.vb">
-      <SubType>ASPXCodeBehind</SubType>
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.designer.vb">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="FormCliente.aspx.designer.vb">
       <DependentUpon>FormCliente.aspx</DependentUpon>
     </Compile>

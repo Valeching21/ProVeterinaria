@@ -59,7 +59,7 @@
                         <li class="nav-item"><a class="nav-link" runat="server" id="liCliente" href="~/FormCliente">Registro de Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="liDoctores" href="~/FormDoctor">Registro de Doctores</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server" id="liMascotas" href="~/FormMascota">Registro de Mascotas</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" id="liCitas" href="~/Contact">Registro de Citas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" id="liCitas" href="~/FormCitas">Registro de Citas</a></li>
                         <li class="nav-item"><a class="nav-link" runat="server">
                             <asp:Button ID="LogOut" OnClick="LogOut_Click" runat="server" Text="Cerrar Sesión" CssClass="btn btn-danger btn-sm" />
                         </a></li>
