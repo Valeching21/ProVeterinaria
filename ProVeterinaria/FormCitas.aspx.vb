@@ -25,13 +25,24 @@
             If EsAdmin Then
                 btnGuardar.Visible = True
                 ddlDoctor.Visible = True
+                ddlCliente.Visible = True
+                ddlMascota.Visible = True
+                txtFecha.Visible = True
+                txtMotivo.Visible = True
+
                 CargarClientes()
                 CargarMascotas()
                 CargarDoctores()
                 GridView1.DataSource = dbHelper.ListarTodasLasCitas()
             Else
+                Historial.Visible = False
                 btnGuardar.Visible = False
                 ddlDoctor.Visible = False
+                ddlCliente.Visible = False
+                ddlMascota.Visible = False
+                txtFecha.Visible = False
+                txtMotivo.Visible = False
+
                 GridView1.DataSource = dbHelper.ListarCitasPorCliente(UsuarioActual.Cliente_ID)
             End If
             GridView1.DataBind()

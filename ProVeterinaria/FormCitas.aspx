@@ -4,9 +4,9 @@
   <asp:HiddenField ID="Editando" runat="server" />
 
   <div class="container mt-4">
-    <h2 class="mb-4">Citas</h2>
+    <h2 class="mb-4">Historial de Citas</h2>
 
-    <div class="card p-4 mb-4 shadow-sm">
+    <div ID="Historial"  runat="server"  class="card p-4 mb-4 shadow-sm">
       <div class="row g-3">
         <div class="col-md-4">
           <asp:TextBox ID="txtFecha" runat="server" CssClass="form-control" TextMode="DateTimeLocal" placeholder="Fecha y Hora"></asp:TextBox>
@@ -44,6 +44,7 @@
       </div>
     </div>
 
+
      <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
     DataKeyNames="CITA_ID"
     CssClass="table table-striped table-hover">
@@ -53,7 +54,7 @@
     <asp:BoundField DataField="CLIENTE_NOMBRE" HeaderText="Cliente" />
     <asp:BoundField DataField="MASCOTA_NOMBRE" HeaderText="Mascota" />
     <asp:BoundField DataField="DOCTOR_NOMBRE" HeaderText="Doctor" />
-  </Columns>
+    </Columns>
 </asp:GridView>
   </div>
 </asp:Content>

@@ -1,4 +1,6 @@
-﻿Public Class FormMascota
+﻿Imports ProVeterinaria.Utils
+
+Public Class FormMascota
     Inherits System.Web.UI.Page
     Public Mascota As New Mascota()
     Protected dbHelper As New dbMascota()
@@ -44,11 +46,16 @@
         Try
             e.Cancel = True
             Dim MASCOTA_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Value)
-            dbHelper.eliminar(MASCOTA_ID)
+            Dim Mensaje = dbHelper.eliminar(MASCOTA_ID)
+
             GridView1.DataBind()
 
-            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaEliminar",
-                "Swal.fire('Eliminado','Mascota eliminada correctamente','success');", True)
+            If Mensaje.Contains("Error") Then
+                SwalUtils.ShowSwalError(Me, "Error", Mensaje)
+            Else
+                SwalUtils.ShowSwal(Me, Mensaje)
+            End If
+
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaErrorEliminar",

@@ -1,4 +1,6 @@
-﻿Public Class FormDoctor
+﻿Imports ProVeterinaria.Utils
+
+Public Class FormDoctor
     Inherits System.Web.UI.Page
     Public Doctor As New Doctor()
     Protected dbHelper As New dbDoctor()
@@ -43,12 +45,15 @@
         Try
             e.Cancel = True
             Dim DOCTOR_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Value)
-            dbHelper.Borrar(DOCTOR_ID)
+            Dim Mensaje = dbHelper.Borrar(DOCTOR_ID)
 
             GridView1.DataBind()
 
-            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaEliminar",
-                "Swal.fire('Eliminado','Doctor eliminado correctamente','success');", True)
+            If Mensaje.Contains("Error") Then
+                SwalUtils.ShowSwalError(Me, "Error", Mensaje)
+            Else
+                SwalUtils.ShowSwal(Me, Mensaje)
+            End If
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaErrorEliminar",

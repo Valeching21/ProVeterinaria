@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Web.Services.Description
+Imports ProVeterinaria.Utils
 
 Public Class FormCliente
     Inherits System.Web.UI.Page
@@ -48,11 +50,16 @@ Public Class FormCliente
         Try
             e.Cancel = True
             Dim CLIENTE_ID As Integer = Convert.ToInt32(GridView1.DataKeys(e.RowIndex).Value)
-            dbHelper.delete(CLIENTE_ID)
+            Dim Mensaje = dbHelper.delete(CLIENTE_ID)
+
             GridView1.DataBind()
 
-            ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaEliminar",
-                "Swal.fire('Eliminado','Cliente eliminado correctamente','success');", True)
+            If Mensaje.Contains("Error") Then
+                SwalUtils.ShowSwalError(Me, "Error", Mensaje)
+            Else
+                SwalUtils.ShowSwal(Me, Mensaje)
+            End If
+
 
         Catch ex As Exception
             ScriptManager.RegisterStartupScript(Me, Me.GetType(), "alertaErrorEliminar",

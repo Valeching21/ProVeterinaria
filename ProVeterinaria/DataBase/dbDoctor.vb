@@ -3,6 +3,8 @@
 Public Class dbDoctor
 
     Private ReadOnly connectionString As String = ConfigurationManager.ConnectionStrings("ProyectoVeterinariaConnectionString").ConnectionString
+    Private ReadOnly dbHelper = New DbHelper()
+
 
     Public Function creacion(Doctor As Doctor) As String
         Try
@@ -32,20 +34,18 @@ Public Class dbDoctor
     Public Function Borrar(DOCTOR_ID As Integer) As String
         Try
             Dim sql As String = "DELETE FROM DOCTOR WHERE DOCTOR_ID = @DOCTOR_ID"
-            Dim parametros As New List(Of SqlParameter) From {
+            Dim Parametros As New List(Of SqlParameter) From {
                 New SqlParameter("@DOCTOR_ID", DOCTOR_ID)
             }
-            Using connection As New SqlConnection(connectionString)
-                Using command As New SqlCommand(sql, connection)
-                    command.Parameters.AddRange(parametros.ToArray())
-                    connection.Open()
-                    command.ExecuteNonQuery()
-                End Using
-            End Using
+            dbHelper.ExecuteNonQuery(sql, Parametros)
+            Return "Persona eliminada"
         Catch ex As Exception
-
+            If ex.Message.Contains("REFERENCE constraint") Then
+                Return "Error: No se puede eliminar porque tiene registros relacionados."
+            End If
+            Return "Error al eliminar la persona: " & ex.Message
         End Try
-        Return "Doctor eliminado exitosamente."
+
     End Function
 
     Public Function refrescar(ByRef Doctor As Doctor) As String

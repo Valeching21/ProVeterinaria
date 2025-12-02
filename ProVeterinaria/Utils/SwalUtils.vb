@@ -3,11 +3,14 @@
         Public Sub ShowSwalMessage(page As System.Web.UI.Page, title As String, message As String, icon As String)
             title = title.Replace("'", "")
             message = message.Replace("'", "")
+            message = message.Replace(vbCrLf, "<br>")
+            message = message.Replace(vbLf, "<br>")
+            message = message.Replace(vbCr, "<br>")
             ScriptManager.RegisterStartupScript(page, page.GetType(), Guid.NewGuid().ToString(), ShowSwalScript(title, message, icon), True)
         End Sub
 
         Public Function ShowSwalScript(title As String, message As String, icon As String) As String
-            Return $"swal.fire({{title: '{title}', text: '{message}', icon: '{icon}'}});"
+            Return $"swal.fire({{title: '{title}', html: '{message}', icon: '{icon}'}});"
         End Function
 
         Public Sub ShowSwalError(page As System.Web.UI.Page, title As String, message As String)
