@@ -15,6 +15,7 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="logo.ico" rel="shortcut icon" type="image/x-icon" />
+   <link href="~/Content/style.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
