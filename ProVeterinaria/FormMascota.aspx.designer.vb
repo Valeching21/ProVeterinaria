@@ -23,6 +23,15 @@ Partial Public Class FormMascota
     Protected WithEvents Editando As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
+    '''Control ddl_cliente.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ddl_cliente As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''Control txt_nombre.
     '''</summary>
     '''<remarks>
@@ -32,13 +41,13 @@ Partial Public Class FormMascota
     Protected WithEvents txt_nombre As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_peso.
+    '''Control txt_edad.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_peso As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_edad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txt_raza.
@@ -50,13 +59,13 @@ Partial Public Class FormMascota
     Protected WithEvents txt_raza As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_edad.
+    '''Control txt_peso.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txt_edad As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txt_peso As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control ddl_especie.
@@ -95,87 +104,6 @@ Partial Public Class FormMascota
     Protected WithEvents btn_regresar As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
-    '''Control lbl_mensaje.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents lbl_mensaje As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Control vsMascota.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents vsMascota As Global.System.Web.UI.WebControls.ValidationSummary
-
-    '''<summary>
-    '''Control rfNombre.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rfNombre As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control rfPeso.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rfPeso As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control rfRaza.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rfRaza As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control rfEdad.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rfEdad As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control RequiredFieldValidator1.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents RequiredFieldValidator1 As Global.System.Web.UI.WebControls.RequiredFieldValidator
-
-    '''<summary>
-    '''Control rvEdad.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rvEdad As Global.System.Web.UI.WebControls.RangeValidator
-
-    '''<summary>
-    '''Control rvPeso.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents rvPeso As Global.System.Web.UI.WebControls.RangeValidator
-
-    '''<summary>
     '''Control GridView1.
     '''</summary>
     '''<remarks>
@@ -185,11 +113,20 @@ Partial Public Class FormMascota
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Control SqlDataSource1.
+    '''Control SqlMascotas.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents SqlDataSource1 As Global.System.Web.UI.WebControls.SqlDataSource
+    Protected WithEvents SqlMascotas As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''Control SqlClientes.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlClientes As Global.System.Web.UI.WebControls.SqlDataSource
 End Class

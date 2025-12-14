@@ -289,7 +289,7 @@
     </Compile>
     <Compile Include="FormMascota.aspx.vb">
       <DependentUpon>FormMascota.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
