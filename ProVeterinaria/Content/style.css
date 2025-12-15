@@ -1,15 +1,18 @@
-﻿/* Tipografía */
+﻿/* ===============================
+   ESTILOS GENERALES
+================================ */
 body {
     font-family: 'Segoe UI', Tahoma, sans-serif;
     margin: 0;
 }
 
-/* Contenedor */
+/* ===============================
+   LOGIN (LO QUE YA TENÍAS)
+================================ */
 .login-bg {
     align-items: center;
 }
 
-/* Card */
 .login-card {
     background-color: #847694;
     border-radius: 15px;
@@ -24,19 +27,16 @@ body {
         box-shadow: 0 15px 30px rgba(0,0,0,0.25);
     }
 
-/* Logo */
 .login-logo {
     width: 90px;
     filter: drop-shadow(0 4px 8px rgba(0,0,0,.4));
 }
 
-/* Título */
 .login-title {
     color: #4d4753;
     font-weight: 600;
 }
 
-/* Inputs */
 .login-input {
     background-color: transparent;
     border: 2px solid #4d4753;
@@ -55,7 +55,6 @@ body {
         color: #fff;
     }
 
-/* Botón */
 .login-btn {
     background-color: #4d4753;
     color: #fff;
@@ -73,7 +72,6 @@ body {
         transform: scale(0.97);
     }
 
-/* Links */
 .login-link {
     color: #4d4753;
     text-decoration: none;
@@ -84,9 +82,38 @@ body {
         color: #fff;
     }
 
-/* Error */
 .error-msg {
     color: #ff4d6d;
     font-size: 14px;
     margin-bottom: 10px;
+}
+
+/* ===============================
+   FORMULARIO DE CITAS
+================================ */
+
+
+
+.citas-selects {
+    background-color: #e6d9f2;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.motivo-full {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.motivo-input {
+    width: 100%;
+    min-height: 60px;
+    resize: none;
+  text-align:left;
+}
+
+
+.citas-card label {
+    color: #4d4753;
+    font-weight: 600;
 }

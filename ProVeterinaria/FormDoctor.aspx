@@ -1,79 +1,162 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Site.Master" CodeBehind="FormDoctor.aspx.vb" Inherits="ProVeterinaria.FormDoctor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-     <asp:HiddenField ID="Editando" runat="server" />
-       <div class="container mt-4">
-    <h2 class="mb-4">Registro de Doctores</h2>
+     <div class="container mt-4">
 
-    <div class="card p-4 mb-4 shadow-sm">
-            <div class="row g-3">
-                    <div class="col-md-2">
-                        <asp:TextBox ID="txt_nombre" placeholder="Ingrese su Nombre" CssClass="form-control" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-md-2">
-                        <asp:TextBox ID="txt_apellido" placeholder="Ingrese su Apellido" CssClass="form-control" runat="server"></asp:TextBox>
-                    </div>
-                    <div class="col-md-2">
-                        <asp:TextBox ID="txt_telefono" placeholder="Ingrese su Teléfono" CssClass="form-control" runat="server" TextMode="Number"></asp:TextBox>
-                    </div>
-                    <div class="col-md-2">
-                        <asp:TextBox ID="txt_correo" placeholder="Ingrese su Correo" CssClass="form-control" runat="server" TextMode="Phone"></asp:TextBox>
-                    </div>
-                   <div class="col-md-4">
-                         <asp:DropDownList ID="ddl_especialidad" placeholder="Especialidad" CssClass="form-select" runat="server">
-                             <asp:ListItem Text="Seleccione la especie" Value="" />
-                             <asp:ListItem Text="Animales de Compañia" Value="compañia" />
-                             <asp:ListItem Text="Animales exóticos" Value="exotico" />
-                             <asp:ListItem Text="Animales de granja" Value="granja" />
-                             <asp:ListItem Text="Equinos" Value="equinos" />
-                             <asp:ListItem Text="Fauna silvestre y de zoológico" Value="zoo" />
-                             <asp:ListItem Text="Vida acuática" Value="peces" />
-                             <asp:ListItem Text="Otro" Value="otro" />
-                         </asp:DropDownList>
-                     </div>
-                    <div class="col-md-2">
-                        <asp:Button ID="btn_guardar" CssClass="btn btn-success" runat="server" Text="Guardar" OnClick="btn_guardar_Click" ValidationGroup="vgDoctor"/> 
-                   </div>
-                     <div class="col-md-2 d-grid">
-                          <asp:Button ID="btn_Actualizar" CSSclass = "btn btn-primary " runat="server" Text="Actualizar" OnClick ="btn_Actualizar_Click" ValidationGroup="vgDoctor" />
-                         </div>
-                        <div class="col-md-2 d-grid">
-                            <asp:Button ID="btn_regresar" CssClass="btn btn-danger" runat="server" Text="Regresar" OnClick="btn_regresar_Click"/>
-                            </div>
+         <asp:HiddenField ID="Editando" runat="server" />
 
+        <h2 class="mb-4 text-center">Registro de Doctores</h2>
 
-        <div class="mt-2">
-            <asp:Label ID="lbl_mensaje" runat="server" CssClass="text-success"></asp:Label>
+        <div class="card p-4 mb-4 shadow-sm mx-auto citas-card"
+             style="max-width: 900px;">
+
+            <div class="row g-3 citas-selects">
+
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Nombre</label>
+                    <asp:TextBox ID="txt_nombre" runat="server"
+                        CssClass="form-control"
+                        placeholder="Ingrese su nombre" />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Apellido</label>
+                    <asp:TextBox ID="txt_apellido" runat="server"
+                        CssClass="form-control"
+                        placeholder="Ingrese su apellido" />
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label fw-bold">Teléfono</label>
+                    <asp:TextBox ID="txt_telefono" runat="server"
+                        CssClass="form-control"
+                        TextMode="Number"
+                        placeholder="Teléfono" />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Correo</label>
+                    <asp:TextBox ID="txt_correo" runat="server"
+                        CssClass="form-control"
+                        TextMode="Email"
+                        placeholder="Correo electrónico" />
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-bold">Especialidad</label>
+                    <asp:DropDownList ID="ddl_especialidad" runat="server"
+                        CssClass="form-select">
+                        <asp:ListItem Text="Seleccione la especialidad" Value="" />
+                        <asp:ListItem Text="Animales de Compañía" Value="compañia" />
+                        <asp:ListItem Text="Animales exóticos" Value="exotico" />
+                        <asp:ListItem Text="Animales de granja" Value="granja" />
+                        <asp:ListItem Text="Equinos" Value="equinos" />
+                        <asp:ListItem Text="Fauna silvestre y zoológico" Value="zoo" />
+                        <asp:ListItem Text="Vida acuática" Value="peces" />
+                        <asp:ListItem Text="Otro" Value="otro" />
+                    </asp:DropDownList>
+                </div>
+
+                <div class="col-12 text-center mt-3">
+                    <asp:Button ID="btn_guardar" runat="server"
+                        Text="Guardar"
+                        CssClass="btn btn-success px-4"
+                        OnClick="btn_guardar_Click"
+                        ValidationGroup="vgDoctor" />
+
+                    <asp:Button ID="btn_Actualizar" runat="server"
+                        Text="Actualizar"
+                        CssClass="btn btn-primary px-4 mx-2"
+                        OnClick="btn_Actualizar_Click"
+                        ValidationGroup="vgDoctor" />
+
+                    <asp:Button ID="btn_regresar" runat="server"
+                        Text="Cancelar"
+                        CssClass="btn btn-danger px-4"
+                        OnClick="btn_regresar_Click" />
+                </div>
+
+                <div class="col-12 text-center mt-2">
+                    <asp:Label ID="lbl_mensaje" runat="server"
+                        CssClass="text-success fw-bold"></asp:Label>
+                </div>
+
+            </div>
         </div>
-     </div>
-</div>
-             <asp:ValidationSummary ID="vsDoctor" runat="server" ShowSummary="True" ValidationGroup="vgDoctor" CssClass="alert alert-warning" HeaderText="Corrige los siguientes errores: "/>
-             <asp:RequiredFieldValidator ID="rfNombre" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_nombre" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Nombre del Doctor"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfApellido" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_apellido" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Apellido del Doctor"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfTelefono" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_telefono" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el número de teléfono del Doctor"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfCorreo" runat="server" ValidationGroup="vgDoctor" ControlToValidate="txt_correo" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere el Correo"></asp:RequiredFieldValidator>
-             <asp:RequiredFieldValidator ID="rfEspecialidad" runat="server" ValidationGroup="vgDoctor" ControlToValidate="ddl_especialidad" CssClass="alert alert-warning" Display="None" ErrorMessage="Se requiere la espacialidad del Doctor"></asp:RequiredFieldValidator>
-             <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txt_telefono" ValidationGroup="vgDoctor" ValidationExpression="^\d{8}$" ErrorMessage="El número de teléfono debe tener 8 dígitos" Display="None" ForeColor="Red" />
 
+        <asp:ValidationSummary ID="vsDoctor" runat="server"
+            ValidationGroup="vgDoctor"
+            CssClass="alert alert-warning mx-auto"
+            HeaderText="Corrige los siguientes errores:"
+            style="max-width:900px;" />
 
-           </div>
-    
-    
-    
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="DOCTOR_ID" DataSourceID="SqlDataSource1" CssClass="table table-striped table-hover" 
-        OnSelectedIndexChanged ="GridView1_SelectedIndexChanged" OnRowDeleting="GridView1_RowDeleting"
-        OnRowCancelingEdit="GridView1_RowCancelingEdit" OnRowUpdating ="GridView1_RowUpdating">
-        <Columns>
-            <asp:BoundField DataField="DOCTOR_ID" HeaderText="DOCTOR_ID" ReadOnly="True" Visible="FALSE" SortExpression="DOCTOR_ID" />
-            <asp:BoundField DataField="NOMBRE" HeaderText="NOMBRE" SortExpression="NOMBRE" />
-            <asp:BoundField DataField="APELLIDO" HeaderText="APELLIDO" SortExpression="APELLIDO" />
-            <asp:BoundField DataField="ESPECIALIDAD" HeaderText="ESPECIALIDAD" SortExpression="ESPECIALIDAD" />
-            <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" InsertVisible="False" ReadOnly="True" SortExpression="TELEFONO" />
-            <asp:BoundField DataField="CORREO" HeaderText="CORREO" SortExpression="CORREO" />
-            <asp:CommandField ShowSelectButton ="True" ControlStyle-CssClass="btn btn-primary" />
-            <asp:CommandField ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" />
-        </Columns>
-    </asp:GridView>
+        <asp:RequiredFieldValidator ID="rfNombre" runat="server"
+            ControlToValidate="txt_nombre"
+            ValidationGroup="vgDoctor"
+            Display="None"
+            ErrorMessage="Se requiere el nombre del Doctor" />
 
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString %>" SelectCommand="SELECT * FROM [DOCTOR]"></asp:SqlDataSource>
+        <asp:RequiredFieldValidator ID="rfApellido" runat="server"
+            ControlToValidate="txt_apellido"
+            ValidationGroup="vgDoctor"
+            Display="None"
+            ErrorMessage="Se requiere el apellido del Doctor" />
 
+        <asp:RequiredFieldValidator ID="rfTelefono" runat="server"
+            ControlToValidate="txt_telefono"
+            ValidationGroup="vgDoctor"
+            Display="None"
+            ErrorMessage="Se requiere el teléfono del Doctor" />
+
+        <asp:RequiredFieldValidator ID="rfCorreo" runat="server"
+            ControlToValidate="txt_correo"
+            ValidationGroup="vgDoctor"
+            Display="None"
+            ErrorMessage="Se requiere el correo del Doctor" />
+
+        <asp:RequiredFieldValidator ID="rfEspecialidad" runat="server"
+            ControlToValidate="ddl_especialidad"
+            ValidationGroup="vgDoctor"
+            Display="None"
+            ErrorMessage="Se requiere la especialidad del Doctor" />
+
+        <asp:RegularExpressionValidator ID="revTelefono" runat="server"
+            ControlToValidate="txt_telefono"
+            ValidationGroup="vgDoctor"
+            ValidationExpression="^\d{8}$"
+            Display="None"
+            ErrorMessage="El teléfono debe tener 8 dígitos" />
+
+        <div class="card shadow-sm mx-auto mt-4" style="max-width: 1000px;">
+            <asp:GridView ID="GridView1" runat="server"
+                AutoGenerateColumns="False"
+                DataKeyNames="DOCTOR_ID"
+                DataSourceID="SqlDataSource1"
+                CssClass="table table-striped table-hover text-center"
+                OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
+                OnRowDeleting="GridView1_RowDeleting">
+
+                <Columns>
+                    <asp:BoundField DataField="DOCTOR_ID" Visible="False" />
+                    <asp:BoundField DataField="NOMBRE" HeaderText="Nombre" />
+                    <asp:BoundField DataField="APELLIDO" HeaderText="Apellido" />
+                    <asp:BoundField DataField="ESPECIALIDAD" HeaderText="Especialidad" />
+                    <asp:BoundField DataField="TELEFONO" HeaderText="Teléfono" />
+                    <asp:BoundField DataField="CORREO" HeaderText="Correo" />
+
+                    <asp:CommandField ShowSelectButton="True"
+                        ControlStyle-CssClass="btn btn-primary btn-sm mx-1" />
+
+                    <asp:CommandField ShowDeleteButton="True"
+                        ControlStyle-CssClass="btn btn-danger btn-sm mx-1" />
+                </Columns>
+
+            </asp:GridView>
+        </div>
+
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server"
+            ConnectionString="<%$ ConnectionStrings:ProyectoVeterinariaConnectionString %>"
+            SelectCommand="SELECT * FROM DOCTOR">
+        </asp:SqlDataSource>
+
+    </div>
 </asp:Content>

@@ -50,15 +50,6 @@ Partial Public Class FormMascota
     Protected WithEvents txt_edad As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txt_raza.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txt_raza As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control txt_peso.
     '''</summary>
     '''<remarks>
@@ -66,6 +57,15 @@ Partial Public Class FormMascota
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txt_peso As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control txt_raza.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txt_raza As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control ddl_especie.
