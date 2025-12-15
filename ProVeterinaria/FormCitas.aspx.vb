@@ -14,10 +14,9 @@ Public Class FormCitas
 
     Private ReadOnly Property EsAdmin As Boolean
         Get
-            Return UsuarioActual IsNot Nothing AndAlso UsuarioActual.Rol = "2"
+            Return UsuarioActual IsNot Nothing AndAlso Convert.ToString(UsuarioActual.Rol) = "2"
         End Get
     End Property
-
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
         If UsuarioActual Is Nothing Then
             Response.Redirect("Login.aspx")
@@ -36,6 +35,7 @@ Public Class FormCitas
                 GridView1.DataSource = dbHelper.ListarCitasPorCliente(UsuarioActual.Cliente_ID)
                 GridView1.DataBind()
             End If
+            ConfigurarAccionesSegunRol()
         End If
     End Sub
 
@@ -144,6 +144,7 @@ Public Class FormCitas
         ddlHora.SelectedIndex = 0
         Editando.Value = ""
     End Sub
+
     Private Sub RefrescarGrid()
         If EsAdmin Then
             GridView1.DataSource = dbHelper.ListarTodasLasCitas()
@@ -151,9 +152,22 @@ Public Class FormCitas
             GridView1.DataSource = dbHelper.ListarCitasPorCliente(UsuarioActual.Cliente_ID)
         End If
         GridView1.DataBind()
+        ConfigurarAccionesSegunRol()
+    End Sub
+
+    Private Sub ConfigurarAccionesSegunRol()
+        If GridView1.Columns.Count >= 8 Then
+            GridView1.Columns(6).Visible = EsAdmin
+            GridView1.Columns(7).Visible = EsAdmin
+        End If
     End Sub
 
     Protected Sub GridView1_RowCommand(sender As Object, e As GridViewCommandEventArgs)
+        If Not EsAdmin Then
+            Utils.SwalUtils.ShowSwalError(Me, "Permisos", "No tiene permisos para modificar estados.")
+            Exit Sub
+        End If
+
         Dim citaId As Integer = Convert.ToInt32(e.CommandArgument)
         Dim nuevoEstado As Integer
 
@@ -180,6 +194,11 @@ Public Class FormCitas
     End Sub
 
     Protected Sub GridView1_SelectedIndexChanged(sender As Object, e As EventArgs)
+        If Not EsAdmin Then
+            Utils.SwalUtils.ShowSwalError(Me, "Permisos", "No tiene permisos para editar citas.")
+            Exit Sub
+        End If
+
         Dim citaId As Integer = Convert.ToInt32(GridView1.SelectedDataKey.Value)
         Editando.Value = citaId.ToString()
 
@@ -194,9 +213,7 @@ Public Class FormCitas
                         txtFecha.Text = fechaHora.ToString("yyyy-MM-dd")
                         ddlHora.SelectedValue = fechaHora.ToString("HH:mm")
                         txtMotivo.Text = dr("MOTIVO").ToString()
-
                         ddlCliente.SelectedValue = dr("CLIENTE_ID").ToString()
-
                         ddlMascota.Items.Clear()
                         ddlMascota.Items.Insert(0, New ListItem("-- Selecciona mascota --", "0"))
                         Dim clienteId As Integer = Convert.ToInt32(dr("CLIENTE_ID"))
@@ -205,7 +222,6 @@ Public Class FormCitas
                         ddlMascota.DataValueField = "MASCOTA_ID"
                         ddlMascota.DataBind()
                         ddlMascota.SelectedValue = dr("MASCOTA_ID").ToString()
-
                         ddlDoctor.SelectedValue = dr("DOCTOR_ID").ToString()
                         ddlEstado.SelectedValue = dr("ESTADO").ToString()
                     End If

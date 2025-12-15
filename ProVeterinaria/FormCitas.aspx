@@ -94,7 +94,7 @@
                             <%# If(Convert.ToInt32(Eval("ESTADO")) = 1, "Atendida", "No atendida") %>
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Acciones">
+                    <asp:TemplateField HeaderText="Acciones" Visible="False">
                         <ItemTemplate>
                             <asp:Button ID="btnAtendida" runat="server" Text="Atendida" CssClass="btn btn-success btn-sm mx-1"
                                 CommandName="MarcarAtendida" CommandArgument='<%# Eval("CITA_ID") %>' />
@@ -102,7 +102,7 @@
                                 CommandName="MarcarNoAtendida" CommandArgument='<%# Eval("CITA_ID") %>' />
                         </ItemTemplate>
                     </asp:TemplateField>
-                    <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass="btn btn-primary btn-sm mx-1" />
+                    <asp:CommandField ShowSelectButton="True" SelectText="Editar" ControlStyle-CssClass="btn btn-primary btn-sm mx-1" Visible="False" />
                 </Columns>
             </asp:GridView>
         </div>
