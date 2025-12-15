@@ -49,9 +49,6 @@
 
                         <asp:Label ID="lblUsuario" runat="server" Visible="false"></asp:Label>
                         <asp:Label ID="lblEmail" runat="server" Visible="false"></asp:Label>
-                        <asp:Label ID="lblEmail" runat="server" Visible="false"></asp:Label>
-                        <asp:Label ID="lblEmail" runat="server" Visible="false"></asp:Label>
-                        <asp:Label ID="lblEmail" runat="server" Visible="false"></asp:Label>
                     </div>
                 </div>
             </div>
