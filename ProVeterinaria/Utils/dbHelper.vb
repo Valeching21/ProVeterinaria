@@ -11,7 +11,7 @@ Public Class DbHelper
 
     ' Método para obtener la conexión
     Public Function GetConnection() As SqlConnection
-        Dim conn As New SqlConnection(ConnectionString)
+        Dim conn As New SqlConnection(connectionString)
         Try
             conn.Open()
         Catch ex As SqlException
