@@ -41,6 +41,24 @@ Partial Public Class FormCitas
     Protected WithEvents txtFecha As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''Control ddlHora.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ddlHora As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control ddlEstado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents ddlEstado As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
     '''Control txtMotivo.
     '''</summary>
     '''<remarks>

@@ -8,6 +8,7 @@ Public Class Cita
     Private _CLIENTE_ID As Integer
     Private _MASCOTA_ID As Integer
     Private _DOCTOR_ID As Integer ' 0 -> se inserta como NULL
+    Private _ESTADO As Integer    ' 1 = atendida, 2 = no atendida
 
     Public Property CITA_ID1 As Integer
         Get
@@ -60,6 +61,15 @@ Public Class Cita
         End Get
         Set(value As Integer)
             _DOCTOR_ID = value
+        End Set
+    End Property
+
+    Public Property ESTADO1 As Integer
+        Get
+            Return _ESTADO
+        End Get
+        Set(value As Integer)
+            _ESTADO = value
         End Set
     End Property
 End Class
